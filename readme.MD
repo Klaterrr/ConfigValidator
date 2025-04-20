@@ -1,7 +1,5 @@
 # Валидатор конфигурации (cli)
 
-[**English README available here (readme_EN.MD)**](readme_EN.MD)
-
 ## Настройка
 
 ```bash

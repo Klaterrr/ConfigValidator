@@ -16,7 +16,6 @@ pip install -r requirements.txt
 export CONFIG_PATH=/путь/к/вашему/config.ini
 python run_validator.py
 ```
-*(Примечание: Замените `/путь/к/вашему/config.ini` на реальный путь к вашему файлу `config.ini`)*
 
 ## Запуск тестов
 

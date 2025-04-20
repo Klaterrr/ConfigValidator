@@ -1,4 +1,4 @@
-# Config Validator Prototype
+# Config Validator (cli)
 
 ## Setup
 

@@ -1,4 +1,6 @@
-# Прототип валидатора конфигурации
+# Валидатор конфигурации (cli)
+
+[**English README available here (README_en.md)**](README_en.md)
 
 ## Настройка
 

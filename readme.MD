@@ -1,6 +1,6 @@
 # Валидатор конфигурации (cli)
 
-[**English README available here (README_en.md)**](README_en.md)
+[**English README available here (readme_EN.md)**](readme_EN.md)
 
 ## Настройка
 

@@ -1,9 +1,8 @@
 import pytest
-import tempfile
 import os
 from framework.config_validator import ConfigValidator
 
-VALID_CONFIG = """
+VALID_CONFIG_TEMPLATE = """
 [General]
 ScanMemoryLimit=1024
 PackageType=RPM
@@ -13,7 +12,7 @@ CoreDumps=False
 RevealSensitiveInfoInTraces=No
 ExecEnvMax=50
 MaxInotifyWatches=10000
-CoreDumpsPath=.
+CoreDumpsPath={core_path}
 UseFanotify=true
 KsvlaMode=no
 MachineId=7b5cc0e7-0205-48e1-bf63-347531eef193
@@ -30,10 +29,13 @@ PingInterval=100
 
 @pytest.fixture
 def valid_config_file(tmp_path, monkeypatch):
-    file = tmp_path / "config.ini"
-    file.write_text(VALID_CONFIG)
-    monkeypatch.setenv("CONFIG_PATH", str(file))
-    return file
+    # Создаем существующую папку для CoreDumpsPath
+    core_dir = tmp_path / "dumps"
+    core_dir.mkdir()
+    config_file = tmp_path / "config.ini"
+    config_file.write_text(VALID_CONFIG_TEMPLATE.format(core_path=core_dir))
+    monkeypatch.setenv("CONFIG_PATH", str(config_file))
+    return config_file
 
 
 def test_valid_config(valid_config_file):
